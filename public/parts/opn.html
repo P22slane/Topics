@@ -1,0 +1,37 @@
+<!--div>
+        <h1 ng-if="!opnCurriculaShort" ><a href="#/" >Digitehnoloogiate teemaderegister</a> - Tööd </h1>
+        <h1 ng-if="opnCurriculaShort" ><a href="#/" >Digitehnoloogiate teemaderegister</a> - <span>{{$root.curriculasName}} <span> </h1>
+      </div-->
+    <div>
+      <ul class="nav nav-tabs" ng-show="!opnCurriculaShort">
+        <li role="presentation" ><a href="#/reg">Registreeritud teemad</a></li>
+        <li role="presentation" class="active"><a href="#/opn">Vabad teemad</a></li>
+        <li role="presentation"><a href="#/def">Kaitstud tööd</a></li>
+      </ul>
+      <ul class="nav nav-tabs" ng-show="opnCurriculaShort">
+        <li role="presentation" ><a href="#/{{opnCurriculaShort}}/reg">Registreeritud teemad</a></li>
+        <li role="presentation" class="active"><a href="#/{{opnCurriculaShort}}/opn">Vabad teemad</a></li>
+        <li role="presentation" ><a href="#/{{opnCurriculaShort}}/def">Kaitstud tööd</a></li>
+      </ul>
+    </div>
+    <div >
+      <div class="panel panel-default">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-md-4">Pakutava töö teema või valdkond</th>
+              <th class="col-md-2">Juhendaja(d)</th>
+              <th class="col-md-1">Töö liik</th>
+              <th class="col-md-1" ng-if="!opnCurriculaShort">Õppekava(d)</th>
+              <th class="col-md-4">Kirjeldus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat = "work in works" ng-if="!opnCurriculaShort && work.status_id === '5639c4f7cecce9c726760c95' " >
+            <td>{{work.title}}</td><td><a href="#/sup/{{work.teacher_id}}"> {{work.teacher_first}} {{work.teacher_last}}  </a></td><td>{{work.presented_date}}</td><td>{{work.curricula}}</td><td>{{work.descriptsion}}</td></tr>
+            <tr ng-repeat = "work in works" ng-if="opnCurriculaShort && work.curricula === opnCurriculaShort && work.status_id === '5639c4f7cecce9c726760c95' ">
+            <td>{{work.title}}</td><td><a href="#/sup/{{work.teacher_id}}"> {{work.teacher_first}} {{work.teacher_last}}  </a></td><td>{{work.presented_date}}</td><td>{{work.descriptsion}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

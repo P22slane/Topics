@@ -1,0 +1,58 @@
+[
+	 {
+	 	"title":"Informaatika (Seminar)", 
+	 	"thesis_type_id": "db.thesis_type.find()[0]._id" , 
+	 	"short":"IFsem" },
+	 {
+	 	"title":"Informaatika (Bakalaureus)", 
+	 	"thesis_type_id": "db.thesis_type.find()[1]._id" , 
+	 	"short":"IFbak" },
+	 {
+	 	"title":"Infoteadus", 
+	 	"thesis_type_id": "db.thesis_type.find()[1]._id" , 
+	 	"short":"INTbak" },
+	 {
+	 	"title":"Matemaatika", 
+	 	"thesis_type_id": "db.thesis_type.find()[1]._id" , 
+	 	"short":"MATbak" },
+	 {
+	 	"title":"Digitaal raamatukogundus", 
+	 	"thesis_type_id": "db.thesis_type.find()[2]._id" , 
+	 	"short":"DR" },
+	 {
+	 	"title":"Haridus-tehnoloogia", 
+	 	"thesis_type_id": "db.thesis_type.find()[2]._id" , 
+	 	"short":"HT" },
+	 {
+	 	"title":"Informaatika-õpetaja", 
+	 	"thesis_type_id": "db.thesis_type.find()[2]._id" , 
+	 	"short":"IFop" },
+	 {
+	 	"title":"Infoteadus", 
+	 	"thesis_type_id": "db.thesis_type.find()[2]._id" , 
+	 	"short":"INTmag" },
+	 {
+	 	"title":"Infotehnoloogia juhtimine", 
+	 	"thesis_type_id": "db.thesis_type.find()[2]._id" , 
+	 	"short":"ITj" },
+	 {
+	 	"title":"Inimese ja arvuti interaktsioon", 
+	 	"thesis_type_id": "db.thesis_type.find()[2]._id" , 
+	 	"short":"HCI" },
+	 {
+	 	"title":"Matemaatika", 
+	 	"thesis_type_id": "db.thesis_type.find()[2]._id" , 
+	 	"short":"MATmag" },
+	 {
+	 	"title":"Matemaatika-õpetaja", 
+	 	"thesis_type_id": "db.thesis_type.find()[2]._id" , 
+	 	"short":"MATop" },
+	 {
+	 	"title":"Info- ja kommunikatsiooni-teadused", 
+	 	"thesis_type_id": "db.thesis_type.find()[3]._id" , 
+	 	"short":"IKT" },
+	 {
+	 	"title":"Infoühiskonna tehnoloogiad", 
+	 	"thesis_type_id": "db.thesis_type.find()[3]._id", 
+	 	"short":"IÜT" }
+]

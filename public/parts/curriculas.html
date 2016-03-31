@@ -1,0 +1,57 @@
+      <div class="row">
+                <div class="col-md-9">
+                  <div>
+                    <h1 class="pealkiri">Bakalaureuseõpe</h1>
+
+                    <div ng-repeat="curricula in curriculasSemBak | orderBy:title" class="nupp pull-left thumbnail" ng-click="addCurricula(curricula.title)"> 
+                        <a href="#/{{curricula.short}}/reg" data-id="{{curricula._id}}" >
+                            <img src="http://placehold.it/150x150" alt="..." />
+                            <div class="wrapper">
+                                <div class="caption post-content"> 
+                                    <h4 class="sisu" ng-model="newData">{{curricula.title_box}}</h4>
+                                    <!--h4 class="sisu">Siinpeaksolema&#8203;kaseepoolitskohtkuskil<{{curricula.thesis_type_id}}></h4-->
+                                </div>
+                            </div>  
+                        </a>
+                    </div>
+                   </div>
+                   <div>
+                        <h1 class="pealkiri">Magistriõpe</h1>
+                        <div ng-repeat="curricula in curriculasMag | orderBy:title" class="nupp pull-left thumbnail" ng-click="addCurricula(curricula.title)">
+                            <a href="#/{{curricula.short}}/reg" data-id="{{curricula._id}}" >
+                                <img src="http://placehold.it/150x150" alt="..." />
+                                <div class="wrapper">
+                                    <div class="caption post-content"> 
+                                        <h4 class="sisu" ng-model="newData">{{curricula.title_box}}</h4>
+                                        <!--h4 class="sisu">{{curricula.thesis_type_id}}</h4-->
+                                    </div>
+                                </div>  
+                            </a>
+                        </div>
+                   </div>
+                   <div>
+                        <h1 class="pealkiri">Doktoriõpe</h1>
+                        <div ng-repeat="curricula in curriculasDok | orderBy:title"  class="nupp pull-left thumbnail" ng-click="addCurricula(curricula.title)"> 
+                            <a href="#/{{curricula.short}}/reg" data-id="{{curricula._id}}" >
+                                <img src="http://placehold.it/150x150" alt="..." />
+                                <div class="wrapper">
+                                    <div class="caption post-content"> 
+                                        <h4 class="sisu" ng-model="newData">{{curricula.title_box}}</h4>
+                                        <!--h4 class="sisu">{{curricula.thesis_type_id}}</h4-->
+                                    </div>
+                                </div>  
+                            </a>
+                        </div>
+                   </div>
+                </div>
+                <div class="col-md-3">
+                  <h2>Olen versioon <b>2</b> ja mul hetkel puudub andmebaasi ühildumine, kuid mu andmed tulevad läbi <b>json'i</b> eraldi failist. See eest oskan <b>routi</b> </h2>
+                  <p>Siia tuleb tekst uudistetst </p>
+                  <p>Lingid: </p>
+                  <a href="#/simple">Lihtne avaleht</a>
+                  <a href="#/create_curricula">Õpekava loomine</a>
+                  <a href="#/user">Kasutajad</a>
+                  <a href="#/create_user">Loo kasutajad</a>
+                  <a href="#/create_topic">Loo teema</a>
+                </div>
+            </div>

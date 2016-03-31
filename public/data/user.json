@@ -1,0 +1,26 @@
+[
+	{
+		"account_types_id": "db.account_types.find()[0]._id", 
+		"course_id": "db.course.find()[0]._id", 
+		"email":"p22slane@gmail.com", 
+		"password":"NULL", 
+		"firstname":"Ragnar", 
+		"lastname": "Pääslane", 
+		"info":"NULL", 
+		"phone":"58091104", 
+		"room":"A-432", 
+		"consultation":"NULL",
+		"tag":"Ragnar-Päälane" },
+	{
+		"account_types_id": "db.account_types.find()[1]._id", 
+		"course_id": "db.course.find()[1]._id", 
+		"email":"hans.poldoja@tlu.ee", 
+		"password":"NULL", 
+		"firstname":"Hans", 
+		"lastname": "Põldoja", 
+		"info":"NULL", 
+		"phone":"+372 640 9355", 
+		"room":"A-317", 
+		"consultation":"NULL",
+		"tag":"Hans-Põldoja"} 
+]

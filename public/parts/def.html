@@ -1,0 +1,38 @@
+        <!--div>
+        <h1 ng-if="!defCurriculaShort" ><a href="#/" >Digitehnoloogiate teemaderegister</a> - Tööd </h1>
+        <h1 ng-if="defCurriculaShort" ><a href="#/" >Digitehnoloogiate teemaderegister</a> - <span>{{$root.curriculasName}} <span> </h1>
+      </div-->
+
+    <div>
+      <ul class="nav nav-tabs" ng-show="!defCurriculaShort">
+        <li role="presentation" ><a href="#/reg">Registreeritud teemad</a></li>
+        <li role="presentation"><a href="#/opn">Vabad teemad</a></li>
+        <li role="presentation" class="active"><a href="#/def">Kaitstud tööd</a></li>
+        <li role="presentation"><input type="text" class="form-control" placeholder="Search" ng-model="query"></li>
+      </ul>
+      <ul class="nav nav-tabs " ng-show="defCurriculaShort">
+        <li role="presentation" ><a href="#/{{defCurriculaShort}}/reg">Registreeritud teemad</a></li>
+        <li role="presentation"><a href="#/{{defCurriculaShort}}/opn">Vabad teemad</a></li>
+        <li role="presentation" class="active"><a href="#/{{defCurriculaShort}}/def">Kaitstud tööd</a></li>
+        <li role="presentation"><input type="text" class="form-control" placeholder="Search" ng-model="query"></li>
+      </ul>
+      <div class="panel panel-default">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-md-6">Teema pealkiri</th>
+              <th class="col-md-2">Juhendaja</th>
+              <th class="col-md-1">Kuupäev</th>
+              <th class="col-md-2">Üliõpilane</th>
+              <th ng-if="!defCurriculaShort" class="col-md-1">Õppekava</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat = "work in works | filter:query" ng-if="!defCurriculaShort && work.status_id === '5656bb3ed1521a9e22b131dc' " >
+            <td>{{work.title}}</td><td><a href="#/user/{{work.teacher_id}}/reg"> {{work.teacher_first}} {{work.teacher_last}}  </a></td><td>{{work.presented_date}}</td><td>{{work.student}}</td><td>{{work.curricula}}</td></tr>
+            <tr ng-repeat = "work in works | filter:query" ng-if="defCurriculaShort && work.curricula === defCurriculaShort && work.status_id === '5656bb3ed1521a9e22b131dc' ">
+            <td>{{work.title}}</td><td><a href="#/user/{{work.teacher_id}}/reg"> {{work.teacher_first}} {{work.teacher_last}}  </a></td><td>{{work.presented_date}}</td><td>{{work.student}}</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

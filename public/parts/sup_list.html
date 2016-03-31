@@ -1,0 +1,36 @@
+<!--span>{{curriculaShort}}</span-->
+    <div >
+      <div class="panel panel-default">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-md-2">Nimi</th>
+              <th class="col-md-2">Email</th>
+              <th class="col-md-2">Info</th>
+              <th class="col-md-2">Phone</th>
+              <th class="col-md-1">Room</th>
+              <th class="col-md-1">Consultation</th>
+              <th class="col-md-1">Tag</th>
+              <th class="col-md-1">Fun.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat = "user in users">
+              <td><a href="#/user/{{user._id}}/reg"> {{user.firstname}} {{user.lastname}}  </a></td>
+              <td>{{user.email}}</td>
+              <td>{{user.info}}</td>
+              <td>{{user.phone}}</td>
+              <td>{{user.room}}</td>
+              <td>{{user.consultation}}</td>
+              <td>{{user.tag}}</td>
+              <td><a href="#/edit/{{user._id}}">
+                <button type="button" class="btn btn-default">
+                  <span class="glyphicon glyphicon-edit" aria-hidden="true" ></span>
+                </button>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

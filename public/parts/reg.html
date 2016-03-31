@@ -1,0 +1,57 @@
+        <!--div>
+          <h1 ng-if="!curriculaShort" ><a href="#/" >Digitehnoloogiate teemaderegister</a> - Tööd </h1>
+          <h1 ng-if="curriculaShort" ><a href="#/" >Digitehnoloogiate teemaderegister</a> - <span>{{$root.curriculasName}} <span> </h1>
+      </div-->
+    <div>
+    <table>
+      <tr>
+        <td style="width: 85%;">
+        <ul class="nav nav-tabs" ng-show="curriculaShort">
+          <li role="presentation" ><a href="#/reg">Story</a></li>
+          <li role="presentation" class="active"><a href="#/{{curriculaShort}}/reg">Registreeritud teemad</a></li>
+          <li role="presentation"><a href="#/{{curriculaShort}}/opn">Vabad teemad</a></li>
+          <li role="presentation"><a href="#/{{curriculaShort}}/def">Kaitstud tööd</a></li>
+          <!--li role="presentation" style="width:550px">.</li-->
+        </ul>
+        </td>
+        <td><input type="text" class="form-control pull-right" placeholder="Search" ng-model="query"></td>
+      </tr>      
+    </table>
+      <ul class="nav nav-tabs" ng-show="!curriculaShort">
+        <li role="presentation" ><a href="#/reg">Story</a></li>
+        <li role="presentation" class="active"><a href="#/reg">Registreeritud teemad</a></li>
+        <li role="presentation"><a href="#/opn">Vabad teemad</a></li>
+        <li role="presentation" ><a href="#/def">Kaitstud tööd</a></li>
+        
+        <li role="presentation"><input type="text" class="form-control" placeholder="Search" ng-model="query"></li>
+      </ul>
+      <!--ul class="nav nav-tabs" ng-show="curriculaShort">
+        <li role="presentation" class="active"><a href="#/{{curriculaShort}}/reg">Registreeritud teemad</a></li>
+        <li role="presentation"><a href="#/{{curriculaShort}}/opn">Vabad teemad</a></li>
+        <li role="presentation"><a href="#/{{curriculaShort}}/def">Kaitstud tööd</a></li>
+        <!--li role="presentation" style="width:550px">.</li-->
+        
+      <!--/ul>
+      <input type="text" class="form-control" placeholder="Search" ng-model="query"-->
+    </div>
+    <div >
+      <div class="panel panel-default">
+        <table class="table">
+          <thead>
+            <tr>
+              <th class="col-md-6">Teema pealkiri</th>
+              <th class="col-md-2">Juhendaja</th>
+              <th class="col-md-1">Kuupäev</th>
+              <th class="col-md-2">Üliõpilne</th>
+              <th ng-if="!curriculaShort" class="col-md-1">Õppekava</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr  ng-repeat = "work in works | filter:query" ng-if="!curriculaShort && work.status_id === '5656bb3ed1521a9e22b131dd' ">
+            <td><a href="#/work/{{work.title}}">{{work.title}}</a></td><td><a href="#/user/{{work.teacher_id}}/reg"> {{work.teacher_first}} {{work.teacher_last}} </a></td><td>{{work.taken_date}}</td><td>{{work.student}}</td><td>{{work.curricula}}</td></tr>
+            <tr ng-repeat = "work in works | filter:query" ng-if="curriculaShort && work.curricula === curriculaShort && work.status_id === '5656bb3ed1521a9e22b131dd' ">
+            <td>{{work.title}}</td><td><a href="#/user/{{work.teacher_id}}/reg"> {{work.teacher_first}} {{work.teacher_last}}  </a></td><td>{{work.taken_date}}</td><td>{{work.student}}</td><!--td>{{work.status_id}}</td><td>{{work.curricula}}</td--></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>

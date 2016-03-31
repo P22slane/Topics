@@ -1,0 +1,52 @@
+    <h2> Muuda juhendaja infot</h2>
+
+    <form role="form" ng-repeat="user in users" ng-if="user._id === supervisorName ">
+      <div class="form-group">
+        <label for="inputdefault">Id: {{user._id}}</label>
+      </div>
+      <div class="form-group">
+        <label for="inputdefault">Eesnimi</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="{{user.firstname}}" >
+      </div>
+      <div class="form-group">
+        <label for="inputdefault">Perekonnanimi</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="{{user.lastname}}">
+      </div>
+      <div class="form-group">
+        <label for="inputdefault">Email</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="{{user.email}}">
+      </div>
+      <div class="form-group">
+        <label for="inputdefault">Parool</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="{{user.password}}">
+      </div>
+      <div class="form-group">
+        <label for="inputdefault">Amet</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="{{user.info}}">
+      </div>
+      <div class="form-group">
+        <label for="inputdefault">Telefon</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="{{user.phone}}">
+      </div>
+      <div class="form-group">
+        <label for="inputdefault">Ruum</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="{{user.room}}">
+      </div>
+      <!--div class="form-group">
+        <label for="inputdefault">Konsultatsioon</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="{{user.consultation}}">
+      </div>
+      <div class="form-group">
+        <label for="inputdefault">Tag</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="{{user.tag}}">
+      </div-->
+      <div class="form-group">
+        <label for="inputdefault">Siseveeb profiili URL</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="URL">
+      </div>
+      <div class="form-group">
+        <label for="inputdefault">ETIS profiili URL</label>
+        <input class="form-control" id="inputdefault" type="text" placeholder="URL">
+      </div>
+      
+    </form>

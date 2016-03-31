@@ -1,0 +1,61 @@
+      <div ng-repeat="user in users" class="row" && ng-if="user._id === supervisorName ">
+        <div class="col-md-4">
+           <img  class="img-thumbnail center-block" src="http://placehold.it/250x250" alt="...">
+        </div>
+        <div class="col-md-8">
+        <h1> <b>{{user.firstname}} {{user.lastname}}</b></h1>
+        <h2> {{account.course_id}} </h2>
+        <table>
+          <thead>
+            <tr>
+              <th style="width:60px"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+            <td>Ruum:</td>
+            <td>{{user.room}}</td>
+            </tr>
+            <tr>
+            <td>Telefon:</td>
+            <td>{{user.phone}}</td>
+            </tr>
+            <tr>
+            <td>E-post:</td>
+            <td><a href="mailto:{{user.email}}">{{user.email}}</a></td>
+            </tr>
+          </tbody>
+        </table>  
+        </div>
+      </div>
+    <hr>
+    <div>
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Registreeritud teemad</a></li>
+        <li role="presentation"><a href="#">Vabad teemad</a></li>
+        <li role="presentation"><a href="juhendaja_hans_kai.html">Kaitstud tööd</a></li>
+        <li role="presentation"><input type="text" class="form-control" placeholder="Search" ng-model="query"></li>
+      </ul>
+    </div>
+    <div >
+      <div class="panel panel-default">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Teema pealkiri</th>
+              <th>Teema reg. kuupäev</th>
+              <th>Üliõpilne</th>
+              <th>Õppekava</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="work in works | filter:query" ng-if=" work.teacher_id === supervisorName && work.status_id ==='5656bb3ed1521a9e22b131dd' ">
+            <td>{{work.title}}</td>
+            <td>{{work.taken_date}}</td>
+            <td>{{work.student}}</td>
+            <td>{{work.curricula}}</td>
+            </tr>
+            </tbody>
+        </table>
+      </div>  
+    </div>

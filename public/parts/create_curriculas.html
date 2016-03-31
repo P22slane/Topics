@@ -1,0 +1,118 @@
+<h2 ng-if="!SearchedCurriculaId"> Loo õppekava</h2>
+<h2 ng-if="SearchedCurriculaId"> Muuda õppekava</h2>
+
+<div class="row">
+    <div class="col-md-8">
+    	<form ng-show="!SearchedCurriculaId" ng-submit="createCurricula()">
+        <div class="form-group">
+          <label for="inputTitle">Õppekava</label>
+  			 <input type="text" class="form-control" id="inputTitle" placeholder="Õpekava" ng-model="currivulaTitle">
+        </div>
+        
+        <div class="form-group">
+          <label for="inputBoxTitle">Õppekava esilehel</label>
+  			 <input type="text" class="form-control" id="inputBoxTitle" placeholder="Õpekava kastis" ng-model="currivulaBoxTitle">
+        </div>
+        
+        <div class="form-group">
+          <label for="inputShort">Õppekava lühidalt</label>
+         <input type="text" class="form-control" id="inputShort" placeholder="Lühend" ng-model="currivulaShort">
+        </div>
+        
+        <div class="form-group">
+          <label for="inputCur">Level</label>
+          <select class="form-control" name="inputCur" id="inputCur" ng-model="currivulaType">
+            <option value="">---Please select---</option> <!-- not selected / blank option -->
+            <option ng-repeat="type in thesisTypes" value="{{type._id}}">{{type.title}}</option> <!-- interpolation -->
+          </select><br>
+        </div>
+
+        <!--div class="form-group">
+          <label>Liik</label>
+          <select class="form-control">
+            <option ng-repeat="type in thesisTypes" value="ObjectId('{{type._id}}')" ng-model="currivulaType">{{type.title}}</option>
+          </select>
+        </div-->
+        <!--div class="nupp pull-right thumbnail"> 
+          <img src="http://placehold.it/150x150" alt="..." />
+          <div class="wrapper">
+            <div class="caption post-content"> 
+                <h4 class="sisu">{{currivulaBoxTitle}}</h4>
+            </div>
+          </div>  
+        </div-->
+        <!--div class="form-group">
+          <input type="text" placeholder="Tüüp" ng-model="currivulaType">
+        </div-->
+  			<button type="submit" class="btn btn-default">Lisa</button>
+        <a href="#/">
+          <button type="button" class="btn btn-default">Tagasi</button>
+        </a>
+		  </form>
+
+      <form ng-show="SearchedCurriculaId" role="form"> 
+        
+        <div class="form-group" >
+          <label for="inputTitle">Õppekava</label>
+         <input type="text" class="form-control" id="inputTitle" placeholder="{{curriculasByIdData.title}}" ng-model="currivulaTitle">
+        </div>
+        
+        <div class="form-group">
+          <label for="inputBoxTitle">Õppekava esilehel</label>
+         <input type="text" class="form-control" id="inputBoxTitle" placeholder="{{curriculasByIdData.title_box}}" ng-model="currivulaBoxTitle">
+        </div>
+
+        <div class="form-group">
+          <label for="inputShort">Õppekava lühidalt</label>
+         <input type="text" class="form-control" id="inputShort" placeholder="{{curriculasByIdData.title}}" ng-model="currivulaShort">
+        </div>
+
+      <div class="form-group">
+          <label for="inputCur">Level</label>
+          <select class="form-control" name="inputCur" id="inputCur" placeholder="{{curriculasByIdData.title}}" ng-model="currivulaType">
+            <option value="">---Please select---</option> <!-- not selected / blank option -->
+            <option ng-repeat="type in thesisTypes" value="{{type._id}}">{{type.title}}</option> <!-- interpolation -->
+          </select><br>
+        </div>
+
+        <button type="button" class="btn btn-default" ng-click ="changeEdits()" >Muuda</button>
+        <a href="#/edit/curricula/">
+          <button type="button" class="btn btn-default">Tagasi</button>
+        </a>
+      </form> 
+    </div>
+
+
+    <div class="col-md-4">
+    	<ul class="list-group">
+    		<li class="list-group-item" style="background-color:#E8E8E8; width:360px;">Bakalaureuseõpe:</li>
+  			<!--li ng-repeat="curricula in curriculasSemBak" class="list-group-item">{{curricula.title}}</li-->
+          <table>
+            <tr ng-repeat="curricula in curriculas" ng-if="curricula.thesis_type_id === '5656ba96d1521a9e22b1312f' || curricula.thesis_type_id === '5656ba96d1521a9e22b13130'" class="list-group-item" >
+              <td style="width:280px;">{{curricula.title}}</td>
+              <td style="width:50px;">
+                <a href="#/edit/curricula/{{curricula._id}}">
+                    <button type="button" class="btn btn-default">
+                      <span class="glyphicon glyphicon-edit" aria-hidden="true" ></span>
+                    </button>
+                </a>
+              </td>
+              <td style="width:50px;">
+                    <button ng-show="!SearchedCurriculaId" type="button" class="btn btn-default">
+                      <span ng-click="remove(curricula)" class="glyphicon glyphicon-remove" aria-hidden="true" ></span>
+                    </button>
+              </td>
+            </tr>
+          </table>
+  			
+  			<li class="list-group-item" style="background-color:#E8E8E8;">Magistriõpe:</li>
+  			<li ng-repeat="curricula in curriculas" ng-if="curricula.thesis_type_id === '5656ba96d1521a9e22b13131'" class="list-group-item">{{curricula.title}}</li>
+  			
+  			<li class="list-group-item" style="background-color:#E8E8E8;">Doktoriõpe:</li>
+  			<li ng-repeat="curricula in curriculas" ng-if="curricula.thesis_type_id === '5656ba96d1521a9e22b13132'" class="list-group-item">{{curricula.title}}</li>
+  		</ul>
+    </div>
+</div>
+<script type="text/javascript">
+
+</script>

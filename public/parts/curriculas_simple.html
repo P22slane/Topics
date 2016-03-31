@@ -1,0 +1,40 @@
+      <div class="row">
+                <div class="col-md-9">
+                  <div>
+                    <h1 class="pealkiri">Bakalaureuseõpe</h1>
+                    <div class="container simple_text"> 
+                        <div class="list-group col-md-9" >
+                            <a ng-repeat="curricula in curriculas" ng-if="curricula.thesis_type_id === '5656ba96d1521a9e22b1312f' || curricula.thesis_type_id === '5656ba96d1521a9e22b13130' " href="#/{{curricula.short}}/reg" data-id="{{curricula._id}}" class="list-group-item" ng-click="addCurricula(curricula.title)">{{curricula.title}}</a>
+                        </div>
+                    </div>
+
+                   </div>
+                   <div>
+                        <h1 class="pealkiri">Magistriõpe</h1>
+                        <div class="container simple_text"> 
+                            <div class="list-group col-md-9" >
+                                <a  ng-repeat="curricula in curriculas" ng-if="curricula.thesis_type_id === '5656ba96d1521a9e22b13131'" href="#/{{curricula.short}}/reg" data-id="{{curricula._id}}" ng-click="addCurricula(curricula.title)" class="list-group-item" ng-click="addCurricula(curricula.title)">{{curricula.title}}</a>
+                            </div>
+                        </div>
+                   </div>
+                   <div>
+                        <h1 class="pealkiri">Doktoriõpe</h1>
+                        <div class="container simple_text"> 
+                            <div class="list-group col-md-9" >
+                                <a  ng-repeat="curricula in curriculas" ng-if="curricula.thesis_type_id === '5656ba96d1521a9e22b13132'" href="#/{{curricula.short}}/reg" data-id="{{curricula._id}}" ng-click="addCurricula(curricula.title)" class="list-group-item" ng-click="addCurricula(curricula.title)">{{curricula.title}}</a>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <div class="col-md-3">
+                  <h2>Uudised</h2>
+                  <span>Olen versioon <b>2</b> ja mul on andmebaasi ühendus. Samuti võimaldan sissekandeid, terveid collectionit kuvada raskem on leida kindlat sissekannet </span>
+                  <p>Siia tuleb tekst uudistetst </p>
+                   <p>Lingid: </p>
+                  <a href="#/simple">Lihtne avaleht</a>
+                  <a href="#/edit/curricula">Õpekava loomine</a>
+                  <a href="#/user">Kasutajad</a>
+                  <a href="#/create_user">Loo kasutajad</a>
+                  <a href="#/create_topic">Loo teema</a>
+                </div>
+            </div>
